@@ -53,7 +53,7 @@ public class CalculatorTest {
     }
 
     @AfterAll
-    public static void setObjectNull(){
+    public static void closeDBConnection(){
         //for example: close DB Connection
     }
 }
