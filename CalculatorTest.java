@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CalculatorTest {
 
     private Calculator calculator;
+    Double[] array;
 
     @BeforeEach
     public void createCalculator(){
@@ -49,11 +50,25 @@ public class CalculatorTest {
     @Test
     @DisplayName("Fail")
     public void testFailed(){
-        fail();
+        //fail();
     }
 
     @AfterAll
-    public static void closeDBConnection(){
+    public static void setObjectNull(){
         //for example: close DB Connection
+    }
+
+
+    // Exception tests
+    @Test
+    @DisplayName("throws IllegalArgumentException")
+    public void parseStringToDouble(){
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {Double.parseDouble("OnePointTwo");});
+    }
+
+    @Test
+    @DisplayName("throws NullPointerException")
+    public void calcTotalOfArray(){
+        Assertions.assertThrows(NullPointerException.class, () -> {calculator.calcSum(array);});
     }
 }
