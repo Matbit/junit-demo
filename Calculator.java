@@ -11,4 +11,12 @@ public class Calculator {
         }
         return true;
     }
+
+    public double calcSum(Double[] array){
+        double result = 0.0;
+        for(double doubleValue : array){
+            result += doubleValue;
+        }
+        return result;
+    }
 }
